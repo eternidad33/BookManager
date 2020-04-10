@@ -37,6 +37,11 @@ public class MainFrm extends JFrame {
         }
     }
 
+    private void menuItem3ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        new BookTypeAddFrm().setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -76,6 +81,7 @@ public class MainFrm extends JFrame {
 
                     //---- menuItem3 ----
                     menuItem3.setText("\u56fe\u4e66\u7c7b\u522b\u6dfb\u52a0");
+                    menuItem3.addActionListener(e -> menuItem3ActionPerformed(e));
                     menu4.add(menuItem3);
 
                     //---- menuItem4 ----
@@ -123,7 +129,7 @@ public class MainFrm extends JFrame {
         {
             // compute preferred size
             Dimension preferredSize = new Dimension();
-            for (int i = 0; i < contentPane.getComponentCount(); i++) {
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);

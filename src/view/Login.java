@@ -1,12 +1,11 @@
 package view;
 
 import dao.UserDao;
-import model.User;
+import entity.User;
 import util.DbUtil;
 import util.StringUtil;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;

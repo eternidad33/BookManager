@@ -1,4 +1,4 @@
-package model;
+package entity;
 
 /**
  * 项目名 BookManager
