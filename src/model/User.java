@@ -9,9 +9,18 @@ package model;
  * @author Vigilr
  */
 public class User {
-    public int id;
-    public String userName;
-    public String password;
+    private int id;
+    private String userName;
+    private String password;
+
+    public User() {
+        super();
+    }
+
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
 
     public int getId() {
         return id;
