@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
+
 /**
  * 项目名 BookManager
  * <br>包名 view
@@ -20,7 +21,7 @@ import java.sql.Connection;
  * @author Vigilr
  */
 public class Login {
-
+    private JFrame frame;
     private JPanel panel1;
     private JTextField userNameTxt;
     private JTextField passwordTxt;
@@ -31,6 +32,12 @@ public class Login {
     private UserDao userDao = new UserDao();
 
     public Login() {
+        this.frame = new JFrame("管理员登录");
+        frame.setContentPane(this.panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,6 +50,7 @@ public class Login {
                 loginButtonActon(e);
             }
         });
+        this.frame.setLocationRelativeTo(null);
     }
 
     /**
@@ -66,7 +74,8 @@ public class Login {
             conn = dbUtil.getConnection();
             User currentUser = userDao.login(conn, user);
             if (currentUser != null) {
-                JOptionPane.showMessageDialog(null, "登陆成功");
+                this.frame.setVisible(false);
+                new MainFrm().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "用户名或密码错误");
             }
@@ -87,10 +96,6 @@ public class Login {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Login");
-        frame.setContentPane(new Login().panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        new Login();
     }
 }
