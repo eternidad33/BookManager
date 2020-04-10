@@ -12,35 +12,37 @@ import java.sql.DriverManager;
  * @author Vigilr
  */
 public class DbUtil {
-    public static final String JDBC_DRIVER="com.mysql.cj.jdbc.Driver";
-    public static final String URL="jdbc:mysql://localhost:3306/db_book";
-    public static final String USERNAME="root";
-    public static final String PASSWORD="123456";
+    public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    public static final String URL = "jdbc:mysql://localhost:3306/db_book";
+    public static final String USERNAME = "root";
+    public static final String PASSWORD = "123456";
 
     /**
-    * 获取数据库连接
-    * @param
-    * @return java.sql.Connection
-    */
-    public Connection getConnection()throws Exception{
+     * 获取数据库连接
+     *
+     * @param
+     * @return java.sql.Connection
+     */
+    public Connection getConnection() throws Exception {
         Class.forName(JDBC_DRIVER);
-        Connection conn= DriverManager.getConnection(URL,USERNAME,PASSWORD);
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         return conn;
     }
 
     /**
-    * 关闭数据库连接
-    * @param connection
-    * @return void
-    */ 
-    public void closeConnection(Connection connection)throws Exception{
-        if (connection!=null){
+     * 关闭数据库连接
+     *
+     * @param connection
+     * @return void
+     */
+    public void closeConnection(Connection connection) throws Exception {
+        if (connection != null) {
             connection.close();
         }
     }
 
     public static void main(String[] args) {
-        DbUtil dbUtil=new DbUtil();
+        DbUtil dbUtil = new DbUtil();
         try {
             dbUtil.getConnection();
             System.out.println("数据库连接成功");
