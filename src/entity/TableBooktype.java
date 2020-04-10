@@ -22,6 +22,15 @@ public class TableBooktype implements Serializable {
         this.booktypedesc = booktypedesc;
     }
 
+    public TableBooktype() {
+        super();
+    }
+
+    public TableBooktype(Integer id, String booktypename, String booktypedesc) {
+        this(booktypename, booktypedesc);
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

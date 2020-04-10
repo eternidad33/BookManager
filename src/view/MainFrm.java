@@ -19,12 +19,10 @@ public class MainFrm extends JFrame {
     }
 
     private void thisWindowClosing(WindowEvent e) {
-        // TODO add your code here
         System.exit(1);
     }
 
     private void menuItem1ActionPerformed(ActionEvent e) {
-        // TODO add your code here
         About about = new About();
         about.setVisible(true);
     }
@@ -37,22 +35,19 @@ public class MainFrm extends JFrame {
         }
     }
 
-    private void menuItem3ActionPerformed(ActionEvent e) {
-        // TODO add your code here
-        new BookTypeAddFrm().setVisible(true);
+
+    private void menuItem5ActionPerformed(ActionEvent e) {
+//        dispose();
+        new BookTypeQueryFrm().setVisible(true);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
-        menu4 = new JMenu();
-        menuItem3 = new JMenuItem();
-        menuItem4 = new JMenuItem();
-        menu3 = new JMenu();
         menuItem5 = new JMenuItem();
-        menuItem6 = new JMenuItem();
         menuItem2 = new JMenuItem();
+        menu5 = new JMenu();
         menu2 = new JMenu();
         menuItem1 = new JMenuItem();
         desktopPane1 = new JDesktopPane();
@@ -73,36 +68,19 @@ public class MainFrm extends JFrame {
 
             //======== menu1 ========
             {
-                menu1.setText("\u57fa\u672c\u6570\u636e\u7ef4\u62a4");
+                menu1.setText("\u57fa\u672c\u6570\u636e\u64cd\u4f5c");
 
-                //======== menu4 ========
-                {
-                    menu4.setText("\u56fe\u4e66\u7c7b\u522b\u7ba1\u7406");
-
-                    //---- menuItem3 ----
-                    menuItem3.setText("\u56fe\u4e66\u7c7b\u522b\u6dfb\u52a0");
-                    menuItem3.addActionListener(e -> menuItem3ActionPerformed(e));
-                    menu4.add(menuItem3);
-
-                    //---- menuItem4 ----
-                    menuItem4.setText("\u56fe\u4e66\u7c7b\u522b\u7ef4\u62a4");
-                    menu4.add(menuItem4);
-                }
-                menu1.add(menu4);
-
-                //======== menu3 ========
-                {
-                    menu3.setText("\u56fe\u4e66\u7ba1\u7406");
-
-                    //---- menuItem5 ----
-                    menuItem5.setText("\u56fe\u4e66\u6dfb\u52a0");
-                    menu3.add(menuItem5);
-
-                    //---- menuItem6 ----
-                    menuItem6.setText("\u56fe\u4e66\u7ef4\u62a4");
-                    menu3.add(menuItem6);
-                }
-                menu1.add(menu3);
+                //---- menuItem5 ----
+                menuItem5.setText("\u56fe\u4e66\u7c7b\u522b\u7ba1\u7406");
+                menuItem5.addActionListener(e -> {
+			menuItem5ActionPerformed(e);
+			menuItem5ActionPerformed(e);
+			menuItem5ActionPerformed(e);
+			menuItem5ActionPerformed(e);
+			menuItem5ActionPerformed(e);
+			menuItem5ActionPerformed(e);
+		});
+                menu1.add(menuItem5);
 
                 //---- menuItem2 ----
                 menuItem2.setText("\u5b89\u5168\u9000\u51fa");
@@ -110,6 +88,12 @@ public class MainFrm extends JFrame {
                 menu1.add(menuItem2);
             }
             menuBar1.add(menu1);
+
+            //======== menu5 ========
+            {
+                menu5.setText("\u56fe\u4e66\u7ba1\u7406");
+            }
+            menuBar1.add(menu5);
 
             //======== menu2 ========
             {
@@ -148,13 +132,9 @@ public class MainFrm extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JMenuBar menuBar1;
     private JMenu menu1;
-    private JMenu menu4;
-    private JMenuItem menuItem3;
-    private JMenuItem menuItem4;
-    private JMenu menu3;
     private JMenuItem menuItem5;
-    private JMenuItem menuItem6;
     private JMenuItem menuItem2;
+    private JMenu menu5;
     private JMenu menu2;
     private JMenuItem menuItem1;
     private JDesktopPane desktopPane1;

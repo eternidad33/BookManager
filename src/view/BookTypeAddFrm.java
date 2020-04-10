@@ -12,6 +12,8 @@ import util.StringUtil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.Connection;
 
 /**
@@ -61,6 +63,11 @@ public class BookTypeAddFrm extends JFrame {
         }
     }
 
+    private void thisWindowClosing(WindowEvent e) {
+        dispose();
+        new MainFrm().setVisible(true);
+    }
+
     DbUtil dbUtil = new DbUtil();
 
     private void initComponents() {
@@ -75,6 +82,12 @@ public class BookTypeAddFrm extends JFrame {
 
         //======== this ========
         setTitle("\u56fe\u4e66\u7c7b\u522b\u6dfb\u52a0");
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                thisWindowClosing(e);
+            }
+        });
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
@@ -112,7 +125,7 @@ public class BookTypeAddFrm extends JFrame {
         {
             // compute preferred size
             Dimension preferredSize = new Dimension();
-            for (int i = 0; i < contentPane.getComponentCount(); i++) {
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);

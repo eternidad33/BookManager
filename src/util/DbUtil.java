@@ -40,16 +40,4 @@ public class DbUtil {
             connection.close();
         }
     }
-
-    public static void main(String[] args) {
-        DbUtil dbUtil = new DbUtil();
-        try {
-            dbUtil.getConnection();
-            System.out.println("数据库连接成功");
-        } catch (Exception e) {
-            System.out.println("数据库连接失败");
-            e.printStackTrace();
-        }
-    }
-
 }
