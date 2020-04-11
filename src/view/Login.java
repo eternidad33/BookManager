@@ -80,6 +80,12 @@ public class Login {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                dbUtil.closeConnection(conn);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

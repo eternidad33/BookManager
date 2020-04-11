@@ -34,6 +34,16 @@ public class Book implements Serializable {
         this.bookdesc = bookdesc;
     }
 
+    public Book(String bookname, String author, Integer booktypeid) {
+        this.bookname = bookname;
+        this.author = author;
+        this.booktypeid = booktypeid;
+    }
+
+    public Book() {
+        super();
+    }
+
     public Integer getId() {
         return id;
     }
@@ -70,10 +80,23 @@ public class Book implements Serializable {
         return price;
     }
 
+    /**
+    * asdhauyd hi
+    *
+    * @param price
+    * @return void
+    * @since 2020/4/11
+    */
     public void setPrice(Float price) {
         this.price = price;
     }
 
+    /**
+    * asdad
+    *
+    * @return java.lang.Integer
+    * @since 2020/4/11
+    */
     public Integer getBooktypeid() {
         return booktypeid;
     }

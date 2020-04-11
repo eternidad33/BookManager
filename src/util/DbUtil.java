@@ -20,7 +20,7 @@ public class DbUtil {
     /**
      * 获取数据库连接
      *
-     * @param
+     * @param []
      * @return java.sql.Connection
      */
     public Connection getConnection() throws Exception {
