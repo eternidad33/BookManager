@@ -15,6 +15,11 @@ public class TableBooktype implements Serializable {
 
     private String booktypename;
 
+    @Override
+    public String toString() {
+        return this.booktypename;
+    }
+
     private String booktypedesc;
 
     public TableBooktype(String booktypename, String booktypedesc) {

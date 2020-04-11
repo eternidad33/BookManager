@@ -38,7 +38,15 @@ public class MainFrm extends JFrame {
 
     private void menuItem5ActionPerformed(ActionEvent e) {
 //        dispose();
-        new BookTypeQueryFrm().setVisible(true);
+        BookTypeQueryFrm bookTypeQueryFrm= new BookTypeQueryFrm();
+        bookTypeQueryFrm.setVisible(true);
+
+    }
+
+    private void menuItem3ActionPerformed(ActionEvent e) {
+        BookAddFrm bookAddFrm=new BookAddFrm();
+        bookAddFrm.setVisible(true);
+//        this.table.add(bookAddFrm);
     }
 
     private void initComponents() {
@@ -48,9 +56,10 @@ public class MainFrm extends JFrame {
         menuItem5 = new JMenuItem();
         menuItem2 = new JMenuItem();
         menu5 = new JMenu();
+        menuItem3 = new JMenuItem();
         menu2 = new JMenu();
         menuItem1 = new JMenuItem();
-        desktopPane1 = new JDesktopPane();
+        table = new JDesktopPane();
 
         //======== this ========
         setTitle("\u4e3b\u754c\u9762");
@@ -74,11 +83,6 @@ public class MainFrm extends JFrame {
                 menuItem5.setText("\u56fe\u4e66\u7c7b\u522b\u7ba1\u7406");
                 menuItem5.addActionListener(e -> {
 			menuItem5ActionPerformed(e);
-			menuItem5ActionPerformed(e);
-			menuItem5ActionPerformed(e);
-			menuItem5ActionPerformed(e);
-			menuItem5ActionPerformed(e);
-			menuItem5ActionPerformed(e);
 		});
                 menu1.add(menuItem5);
 
@@ -92,6 +96,11 @@ public class MainFrm extends JFrame {
             //======== menu5 ========
             {
                 menu5.setText("\u56fe\u4e66\u7ba1\u7406");
+
+                //---- menuItem3 ----
+                menuItem3.setText("\u56fe\u4e66\u6dfb\u52a0");
+                menuItem3.addActionListener(e -> menuItem3ActionPerformed(e));
+                menu5.add(menuItem3);
             }
             menuBar1.add(menu5);
 
@@ -107,8 +116,8 @@ public class MainFrm extends JFrame {
             menuBar1.add(menu2);
         }
         setJMenuBar(menuBar1);
-        contentPane.add(desktopPane1);
-        desktopPane1.setBounds(0, 0, 460, 375);
+        contentPane.add(table);
+        table.setBounds(0, 0, 460, 375);
 
         {
             // compute preferred size
@@ -135,8 +144,9 @@ public class MainFrm extends JFrame {
     private JMenuItem menuItem5;
     private JMenuItem menuItem2;
     private JMenu menu5;
+    private JMenuItem menuItem3;
     private JMenu menu2;
     private JMenuItem menuItem1;
-    private JDesktopPane desktopPane1;
+    private JDesktopPane table;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
