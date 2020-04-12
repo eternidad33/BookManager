@@ -15,7 +15,7 @@ import java.sql.Connection;
  * 项目名 BookManager
  * <br>包名 view
  * <br>创建时间 2020/4/10 12:48
- * <br>描述
+ * <br>描述 登录界面
  *
  * @author Vigilr
  */
@@ -55,7 +55,6 @@ public class Login {
     /**
      * 创建登录事件
      *
-     * @param evt
      * @return void
      */
     private void loginButtonActon(ActionEvent evt) {
@@ -92,7 +91,6 @@ public class Login {
     /**
      * 重置事件处理
      *
-     * @param evt
      * @return void
      */
     private void resetAction(ActionEvent evt) {

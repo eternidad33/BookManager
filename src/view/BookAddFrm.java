@@ -26,6 +26,12 @@ public class BookAddFrm extends JFrame {
         initComponents();
     }
 
+    /**
+     * 添加图书事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void button1ActionPerformed(ActionEvent e) {
         String bookName = this.booknameTXT.getText();
         String author = this.bookAuthorTXT.getText();
@@ -94,6 +100,12 @@ public class BookAddFrm extends JFrame {
 
     private DbUtil dbUtil = new DbUtil();
 
+    /**
+     * 填充图书类别下拉框
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void fillBookTypeCB() {
         TableBooktype booktype = null;
         Connection conn = null;

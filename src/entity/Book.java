@@ -80,23 +80,10 @@ public class Book implements Serializable {
         return price;
     }
 
-    /**
-    * asdhauyd hi
-    *
-    * @param price
-    * @return void
-    * @since 2020/4/11
-    */
     public void setPrice(Float price) {
         this.price = price;
     }
 
-    /**
-    * asdad
-    *
-    * @return java.lang.Integer
-    * @since 2020/4/11
-    */
     public Integer getBooktypeid() {
         return booktypeid;
     }

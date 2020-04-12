@@ -7,7 +7,7 @@ import java.sql.DriverManager;
  * 项目名 BookManager
  * <br>包名 util
  * <br>创建时间 2020/4/10 10:34
- * <br>描述
+ * <br>描述 数据库工具类
  *
  * @author Vigilr
  */
@@ -20,7 +20,6 @@ public class DbUtil {
     /**
      * 获取数据库连接
      *
-     * @param []
      * @return java.sql.Connection
      */
     public Connection getConnection() throws Exception {
@@ -32,7 +31,7 @@ public class DbUtil {
     /**
      * 关闭数据库连接
      *
-     * @param connection
+     * @param connection 数据库连接
      * @return void
      */
     public void closeConnection(Connection connection) throws Exception {

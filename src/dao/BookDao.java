@@ -17,6 +17,14 @@ import java.sql.SQLException;
  * @author Vigilr
  */
 public class BookDao {
+    /**
+     * 添加图书
+     *
+     * @param connection 数据库连接
+     * @param book       要添加的图书实体
+     * @return int
+     * @since 2020/4/12
+     */
     public static int add(Connection connection, Book book) throws SQLException {
         String sql = "insert into book values(null,?,?,?,?,?,?)";
         PreparedStatement psmt = connection.prepareStatement(sql);
@@ -29,6 +37,14 @@ public class BookDao {
         return psmt.executeUpdate();
     }
 
+    /**
+     * 列出图书
+     *
+     * @param conn 数据库连接
+     * @param book 图书实体
+     * @return java.sql.ResultSet
+     * @since 2020/4/12
+     */
     public static ResultSet list(Connection conn, Book book) throws SQLException {
         StringBuffer sb = new StringBuffer("select * from book b,table_booktype bt where b.bookTypeId=bt.id");
         if (!StringUtil.isEmpty(book.getBookname())) {
@@ -42,5 +58,20 @@ public class BookDao {
         }
         PreparedStatement psmt = conn.prepareStatement(sb.toString());
         return psmt.executeQuery();
+    }
+
+    /**
+     * 删除图书信息
+     *
+     * @param conn 数据库连接
+     * @param id   图书编号
+     * @return int
+     * @since 2020/4/12
+     */
+    public static int delete(Connection conn, String id) throws SQLException {
+        String sql = "delete from book where id=?";
+        PreparedStatement psmt = conn.prepareStatement(sql);
+        psmt.setString(1, id);
+        return psmt.executeUpdate();
     }
 }

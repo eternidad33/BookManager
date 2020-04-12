@@ -28,11 +28,23 @@ public class BookTypeAddFrm extends JFrame {
         this.resetValue();
     }
 
+    /**
+    * 清空输入框功能
+    *
+    * @return void
+    * @since 2020/4/12
+    */
     private void resetValue() {
         this.bookTypeNameTxt.setText("");
         this.bookTypeDescTxt.setText("");
     }
 
+    /**
+    * 图书类别添加事件处理
+    *
+    * @return void
+    * @since 2020/4/12
+    */
     private void button1ActionPerformed(ActionEvent e) {
         String bookTypeName = this.bookTypeNameTxt.getText();
         String bookTypeDesc = this.bookTypeDescTxt.getText();

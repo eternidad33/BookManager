@@ -33,6 +33,12 @@ public class BookTypeQueryFrm extends JFrame {
         bookTypeQuery(e);
     }
 
+    /**
+     * 图书查询事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void bookTypeQuery(ActionEvent ex) {
         String name = this.bookTypeNameTxt.getText();
         TableBooktype tableBooktype = new TableBooktype();
@@ -44,6 +50,12 @@ public class BookTypeQueryFrm extends JFrame {
         bookTypeTableMousePressed(e);
     }
 
+    /**
+     * 选中表格数据事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void bookTypeTableMousePressed(MouseEvent ex) {
         //获取行号
         int row = this.table1.getSelectedRow();
@@ -56,6 +68,12 @@ public class BookTypeQueryFrm extends JFrame {
         bookTypeupdate(e);
     }
 
+    /**
+     * 修改图书类别信息
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void bookTypeupdate(ActionEvent ex) {
         String id = idTxt.getText();
         String name = nameTxt.getText();
@@ -89,12 +107,24 @@ public class BookTypeQueryFrm extends JFrame {
 
     }
 
+    /**
+     * 清空输入框信息
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void resetValue() {
         this.idTxt.setText("");
         this.nameTxt.setText("");
         this.descTxt.setText("");
     }
 
+    /**
+     * 删除按钮事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void button3ActionPerformed(ActionEvent e) {
         String id = idTxt.getText();
         if (id.isEmpty()) {
@@ -126,6 +156,12 @@ public class BookTypeQueryFrm extends JFrame {
         }
     }
 
+    /**
+     * 添加按钮事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void button4ActionPerformed(ActionEvent e) {
         dispose();
         new BookTypeAddFrm().setVisible(true);
@@ -304,6 +340,12 @@ public class BookTypeQueryFrm extends JFrame {
 
     DbUtil dbUtil = new DbUtil();
 
+    /**
+     * 填充表格
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void fillTable(TableBooktype tableBooktype) {
         DefaultTableModel dtm = (DefaultTableModel) table1.getModel();
         dtm.setRowCount(0);

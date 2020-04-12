@@ -32,11 +32,23 @@ public class MainFrm extends JFrame {
         System.exit(1);
     }
 
+    /**
+     * 关于开发者
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void menuItem1ActionPerformed(ActionEvent e) {
         About about = new About();
         about.setVisible(true);
     }
 
+    /**
+     * 填充下拉框
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void fillerItem(String type) {
         Connection conn = null;
         TableBooktype booktype = null;
@@ -72,6 +84,12 @@ public class MainFrm extends JFrame {
         }
     }
 
+    /**
+     * 安全退出时间处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void menuItem2ActionPerformed(ActionEvent e) {
         int result = JOptionPane.showConfirmDialog(null, "是否退出系统");
         System.out.println(result);
@@ -81,19 +99,36 @@ public class MainFrm extends JFrame {
     }
 
 
+    /**
+     * 图书类别管理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void menuItem5ActionPerformed(ActionEvent e) {
 //        dispose();
         BookTypeQueryFrm bookTypeQueryFrm = new BookTypeQueryFrm();
         bookTypeQueryFrm.setVisible(true);
-
     }
 
+    /**
+     * 图书添加
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void menuItem3ActionPerformed(ActionEvent e) {
         BookAddFrm bookAddFrm = new BookAddFrm();
         bookAddFrm.setVisible(true);
 //        this.table.add(bookAddFrm);
     }
 
+    /**
+    * 查询事件处理
+    *
+    * @return void
+    * @since 2020/4/12
+    */
     private void button1ActionPerformed(ActionEvent e) {
         String name = this.bookNameTXT.getText();
         String author = this.authorTXT.getText();
@@ -278,6 +313,13 @@ public class MainFrm extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    /**
+     * 填充表格
+     *
+     * @param book 要筛选的图书
+     * @return void
+     * @since 2020/4/12
+     */
     private void fillTable(Book book) {
         DefaultTableModel dtm = (DefaultTableModel) table1.getModel();
         dtm.setRowCount(0);

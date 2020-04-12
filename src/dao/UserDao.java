@@ -16,6 +16,14 @@ import java.sql.SQLException;
  * @author Vigilr
  */
 public class UserDao {
+    /**
+     * 用户登录
+     *
+     * @param connection 数据库连接
+     * @param user       用户实体
+     * @return entity.User
+     * @since 2020/4/12
+     */
     public User login(Connection connection, User user) throws SQLException {
         User resultUser = null;
         String sql = "select * from table_user where userName=? and password=?";

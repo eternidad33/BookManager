@@ -12,7 +12,7 @@ import java.sql.SQLException;
  * 项目名 BookManager
  * <br>包名 dao
  * <br>创建时间 2020/4/10 18:54
- * <br>描述
+ * <br>描述 图书类型Dao
  *
  * @author Vigilr
  */
@@ -56,7 +56,8 @@ public class BookTypeDao {
     /**
      * 修改图书类别
      *
-     * @param connection, booktype
+     * @param connection 数据库连接
+     * @param booktype 图书类别实体
      * @return int
      */
     public static int update(Connection connection, TableBooktype booktype) throws SQLException {
