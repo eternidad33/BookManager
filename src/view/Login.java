@@ -1,5 +1,6 @@
 package view;
 
+import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 import dao.UserDao;
 import entity.User;
 import util.DbUtil;
@@ -98,7 +99,16 @@ public class Login {
         this.passwordTxt.setText("");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        DbUtil dbUtil = new DbUtil();
+        try {
+            dbUtil.getConnection();
+            System.out.println("数据库连接成功");
+        } catch (CommunicationsException e) {
+            System.out.println("数据库连接失败");
+            JOptionPane.showMessageDialog(null,"数据库连接失败");
+            return;
+        }
         new Login();
     }
 }

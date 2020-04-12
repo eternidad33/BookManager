@@ -13,7 +13,8 @@ import java.sql.DriverManager;
  */
 public class DbUtil {
     public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/db_book";
+        public static final String URL = "jdbc:mysql://localhost:3306/db_book";
+//    public static final String URL = "jdbc:mysql://123.57.56.190:3306/db_book" + "?useUnicode=true&useSSL=false" + "&characterEncoding=utf-8&serverTimezone=UTC";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "123456";
 
