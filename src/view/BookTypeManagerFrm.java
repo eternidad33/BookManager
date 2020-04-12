@@ -136,6 +136,11 @@ public class BookTypeManagerFrm extends JFrame {
             Connection connection = null;
             try {
                 connection = dbUtil.getConnection();
+                boolean flag = BookTypeDao.existBook(connection, id);
+                if (flag) {
+                    JOptionPane.showMessageDialog(null, "当前类别下有图书，不能删除该类别");
+                    return;
+                }
                 int deleteNum = BookTypeDao.delete(connection, id);
                 if (deleteNum == 1) {
                     JOptionPane.showMessageDialog(null, "删除成功");
@@ -146,6 +151,7 @@ public class BookTypeManagerFrm extends JFrame {
                 }
             } catch (Exception e1) {
                 e1.printStackTrace();
+                JOptionPane.showMessageDialog(null, "删除失败");
             } finally {
                 try {
                     dbUtil.closeConnection(connection);
@@ -163,9 +169,9 @@ public class BookTypeManagerFrm extends JFrame {
      * @since 2020/4/12
      */
     private void button4ActionPerformed(ActionEvent e) {
-        dispose();
         new BookTypeAddFrm().setVisible(true);
     }
+
 
     private void initComponents() {
         dispose();
@@ -235,19 +241,19 @@ public class BookTypeManagerFrm extends JFrame {
             //---- label2 ----
             label2.setText("\u7f16\u53f7");
             panel1.add(label2);
-            label2.setBounds(35, 35, 55, label2.getPreferredSize().height);
+            label2.setBounds(30, 35, 55, label2.getPreferredSize().height);
 
             //---- idTxt ----
             idTxt.setEditable(false);
             panel1.add(idTxt);
-            idTxt.setBounds(95, 35, 45, idTxt.getPreferredSize().height);
+            idTxt.setBounds(70, 35, 75, idTxt.getPreferredSize().height);
 
             //---- label3 ----
             label3.setText("\u56fe\u4e66\u7c7b\u522b\u540d\u79f0");
             panel1.add(label3);
-            label3.setBounds(165, 40, 75, label3.getPreferredSize().height);
+            label3.setBounds(185, 35, 100, label3.getPreferredSize().height);
             panel1.add(nameTxt);
-            nameTxt.setBounds(270, 40, 135, nameTxt.getPreferredSize().height);
+            nameTxt.setBounds(270, 35, 135, nameTxt.getPreferredSize().height);
 
             //---- label4 ----
             label4.setText("\u63cf\u8ff0");
@@ -259,7 +265,7 @@ public class BookTypeManagerFrm extends JFrame {
                 scrollPane2.setViewportView(descTxt);
             }
             panel1.add(scrollPane2);
-            scrollPane2.setBounds(95, 80, 310, 95);
+            scrollPane2.setBounds(65, 75, 340, 95);
 
             //---- button2 ----
             button2.setText("\u4fee\u6539");
@@ -275,12 +281,7 @@ public class BookTypeManagerFrm extends JFrame {
 
             //---- button4 ----
             button4.setText("\u6dfb\u52a0");
-            button4.addActionListener(e -> {
-			button4ActionPerformed(e);
-			button4ActionPerformed(e);
-			button4ActionPerformed(e);
-			button4ActionPerformed(e);
-		});
+            button4.addActionListener(e -> button4ActionPerformed(e));
             panel1.add(button4);
             button4.setBounds(new Rectangle(new Point(40, 205), button4.getPreferredSize()));
 
@@ -316,7 +317,7 @@ public class BookTypeManagerFrm extends JFrame {
             contentPane.setMinimumSize(preferredSize);
             contentPane.setPreferredSize(preferredSize);
         }
-        pack();
+        setSize(460, 555);
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
         this.fillTable(new Booktype());

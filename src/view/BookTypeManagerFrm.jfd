@@ -6,6 +6,7 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			"title": "图书类型管理"
+			"$sizePolicy": 1
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JTable" ) {
@@ -69,7 +70,7 @@ new FormModel {
 					name: "label2"
 					"text": "编号"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 35
+					"x": 30
 					"y": 35
 					"width": 55
 				} )
@@ -77,23 +78,23 @@ new FormModel {
 					name: "idTxt"
 					"editable": false
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 95
+					"x": 70
 					"y": 35
-					"width": 45
+					"width": 75
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label3"
 					"text": "图书类别名称"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 165
-					"y": 40
-					"width": 75
+					"x": 185
+					"y": 35
+					"width": 100
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "nameTxt"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 270
-					"y": 40
+					"y": 35
 					"width": 135
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -109,9 +110,9 @@ new FormModel {
 						name: "descTxt"
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 95
-					"y": 80
-					"width": 310
+					"x": 65
+					"y": 75
+					"width": 340
 					"height": 95
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -133,9 +134,6 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button4"
 					"text": "添加"
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4ActionPerformed", true ) )
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4ActionPerformed", true ) )
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4ActionPerformed", true ) )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4ActionPerformed", true ) )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 40

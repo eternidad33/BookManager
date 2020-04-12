@@ -74,4 +74,26 @@ public class BookDao {
         psmt.setString(1, id);
         return psmt.executeUpdate();
     }
+
+    /**
+     * 修改图书信息
+     *
+     * @param conn 数据库连接
+     * @param book 图书实体
+     * @return int
+     * @since 2020/4/12
+     */
+    public static int update(Connection conn, Book book) throws SQLException {
+        String sql = "update book set bookName=?,author=?,sex=?,price=?,bookTypeid=?,bookDesc=? where id=?";
+        PreparedStatement psmt = conn.prepareStatement(sql);
+        psmt.setString(1, book.getBookname());
+        psmt.setString(2, book.getAuthor());
+        psmt.setString(3, book.getSex());
+        psmt.setFloat(4, book.getPrice());
+        psmt.setInt(5, book.getBooktypeid());
+        psmt.setString(6, book.getBookdesc());
+        psmt.setInt(7, book.getId());
+        return psmt.executeUpdate();
+    }
+
 }

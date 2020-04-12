@@ -49,6 +49,12 @@ public class BookAddFrm extends JFrame {
             JOptionPane.showMessageDialog(null, "图书价格不能为空");
             return;
         }
+        try {
+            float pricef = Float.parseFloat(price);
+        } catch (NumberFormatException numberFormatException) {
+            JOptionPane.showMessageDialog(null, "图书价格应为数字");
+            return;
+        }
         String sex = "";
         if (this.man.isSelected()) {
             sex = "男";

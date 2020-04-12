@@ -40,6 +40,16 @@ public class Book implements Serializable {
         this.booktypeid = booktypeid;
     }
 
+    public Book(Integer id, String bookname, String author, String sex, Float price, Integer booktypeid, String bookdesc) {
+        this.id = id;
+        this.bookname = bookname;
+        this.author = author;
+        this.sex = sex;
+        this.price = price;
+        this.booktypeid = booktypeid;
+        this.bookdesc = bookdesc;
+    }
+
     public Book() {
         super();
     }
