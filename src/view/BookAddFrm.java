@@ -217,11 +217,7 @@ public class BookAddFrm extends JFrame {
 
         //---- button1 ----
         button1.setText("\u6dfb\u52a0");
-        button1.addActionListener(e -> {
-			button1ActionPerformed(e);
-			button1ActionPerformed(e);
-			button1ActionPerformed(e);
-		});
+        button1.addActionListener(e -> button1ActionPerformed(e));
         contentPane.add(button1);
         button1.setBounds(new Rectangle(new Point(80, 360), button1.getPreferredSize()));
 
