@@ -7,7 +7,7 @@ package view;
 import dao.BookDao;
 import dao.BookTypeDao;
 import entity.Book;
-import entity.TableBooktype;
+import entity.Booktype;
 import util.DbUtil;
 import util.StringUtil;
 
@@ -55,7 +55,7 @@ public class BookAddFrm extends JFrame {
         } else {
             sex = "女";
         }
-        TableBooktype booktype = (TableBooktype) this.booktypecb.getSelectedItem();
+        Booktype booktype = (Booktype) this.booktypecb.getSelectedItem();
         assert booktype != null;
         int booktypeId = booktype.getId();
         Book book = new Book(bookName, author, sex, Float.parseFloat(price), booktypeId, bookDesc);
@@ -107,13 +107,13 @@ public class BookAddFrm extends JFrame {
      * @since 2020/4/12
      */
     private void fillBookTypeCB() {
-        TableBooktype booktype = null;
+        Booktype booktype = null;
         Connection conn = null;
         try {
             conn = dbUtil.getConnection();
-            ResultSet rs = BookTypeDao.list(conn, new TableBooktype());
+            ResultSet rs = BookTypeDao.list(conn, new Booktype());
             while (rs.next()) {
-                booktype = new TableBooktype();
+                booktype = new Booktype();
                 booktype.setId(rs.getInt("id"));
                 booktype.setBooktypename(rs.getString("bookTypeName"));
                 this.booktypecb.addItem(booktype);

@@ -5,7 +5,7 @@
 package view;
 
 import dao.BookTypeDao;
-import entity.TableBooktype;
+import entity.Booktype;
 import util.DbUtil;
 import util.StringUtil;
 
@@ -52,11 +52,11 @@ public class BookTypeAddFrm extends JFrame {
             JOptionPane.showMessageDialog(null, "图书类别名称不能为空");
             return;
         }
-        TableBooktype tableBooktype = new TableBooktype(bookTypeName, bookTypeDesc);
+        Booktype booktype = new Booktype(bookTypeName, bookTypeDesc);
         Connection conn = null;
         try {
             conn = dbUtil.getConnection();
-            int n = BookTypeDao.add(conn, tableBooktype);
+            int n = BookTypeDao.add(conn, booktype);
             if (n == 1) {
                 JOptionPane.showMessageDialog(null, "图书类别添加成功");
                 this.resetValue();

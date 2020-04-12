@@ -3,12 +3,12 @@ package entity;
 import java.io.Serializable;
 
 /**
- * (TableBooktype)实体类
+ * (Booktype)实体类
  *
  * @author makejava
  * @since 2020-04-10 18:47:15
  */
-public class TableBooktype implements Serializable {
+public class Booktype implements Serializable {
     private static final long serialVersionUID = -43707012852599825L;
 
     private Integer id;
@@ -22,16 +22,16 @@ public class TableBooktype implements Serializable {
 
     private String booktypedesc;
 
-    public TableBooktype(String booktypename, String booktypedesc) {
+    public Booktype(String booktypename, String booktypedesc) {
         this.booktypename = booktypename;
         this.booktypedesc = booktypedesc;
     }
 
-    public TableBooktype() {
+    public Booktype() {
         super();
     }
 
-    public TableBooktype(Integer id, String booktypename, String booktypedesc) {
+    public Booktype(Integer id, String booktypename, String booktypedesc) {
         this(booktypename, booktypedesc);
         this.id = id;
     }

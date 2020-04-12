@@ -5,7 +5,7 @@
 package view;
 
 import dao.BookTypeDao;
-import entity.TableBooktype;
+import entity.Booktype;
 import util.DbUtil;
 import util.StringUtil;
 
@@ -41,9 +41,9 @@ public class BookTypeManagerFrm extends JFrame {
      */
     private void bookTypeQuery(ActionEvent ex) {
         String name = this.bookTypeNameTxt.getText();
-        TableBooktype tableBooktype = new TableBooktype();
-        tableBooktype.setBooktypename(name);
-        this.fillTable(tableBooktype);
+        Booktype booktype = new Booktype();
+        booktype.setBooktypename(name);
+        this.fillTable(booktype);
     }
 
     private void table1MousePressed(MouseEvent e) {
@@ -82,15 +82,15 @@ public class BookTypeManagerFrm extends JFrame {
             JOptionPane.showMessageDialog(null, "请选择要修改的记录");
             return;
         }
-        TableBooktype tableBooktype = new TableBooktype(Integer.parseInt(id), name, desc);
+        Booktype booktype = new Booktype(Integer.parseInt(id), name, desc);
         Connection conn = null;
         try {
             conn = dbUtil.getConnection();
-            int modify = BookTypeDao.update(conn, tableBooktype);
+            int modify = BookTypeDao.update(conn, booktype);
             if (modify == 1) {
                 JOptionPane.showMessageDialog(null, "修改成功");
                 this.resetValue();
-                this.fillTable(new TableBooktype());
+                this.fillTable(new Booktype());
             } else {
                 JOptionPane.showMessageDialog(null, "修改失败");
             }
@@ -140,7 +140,7 @@ public class BookTypeManagerFrm extends JFrame {
                 if (deleteNum == 1) {
                     JOptionPane.showMessageDialog(null, "删除成功");
                     this.resetValue();
-                    this.fillTable(new TableBooktype());
+                    this.fillTable(new Booktype());
                 } else {
                     JOptionPane.showMessageDialog(null, "删除失败");
                 }
@@ -319,7 +319,7 @@ public class BookTypeManagerFrm extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
-        this.fillTable(new TableBooktype());
+        this.fillTable(new Booktype());
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -349,13 +349,13 @@ public class BookTypeManagerFrm extends JFrame {
      * @return void
      * @since 2020/4/12
      */
-    private void fillTable(TableBooktype tableBooktype) {
+    private void fillTable(Booktype booktype) {
         DefaultTableModel dtm = (DefaultTableModel) table1.getModel();
         dtm.setRowCount(0);
         Connection conn = null;
         try {
             conn = dbUtil.getConnection();
-            ResultSet resultSet = BookTypeDao.list(conn, tableBooktype);
+            ResultSet resultSet = BookTypeDao.list(conn, booktype);
             while (resultSet.next()) {
                 Vector all = new Vector();
                 all.add(resultSet.getString("id"));

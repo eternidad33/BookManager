@@ -1,6 +1,6 @@
 package dao;
 
-import entity.TableBooktype;
+import entity.Booktype;
 import util.StringUtil;
 
 import java.sql.Connection;
@@ -17,24 +17,24 @@ import java.sql.SQLException;
  * @author Vigilr
  */
 public class BookTypeDao {
-    public static int add(Connection connection, TableBooktype tableBooktype) throws SQLException {
+    public static int add(Connection connection, Booktype booktype) throws SQLException {
         String sql = "insert into table_booktype values(null,?,?)";
         PreparedStatement psmt = connection.prepareStatement(sql);
-        psmt.setString(1, tableBooktype.getBooktypename());
-        psmt.setString(2, tableBooktype.getBooktypedesc());
+        psmt.setString(1, booktype.getBooktypename());
+        psmt.setString(2, booktype.getBooktypedesc());
         return psmt.executeUpdate();
     }
 
     /**
      * 查询图书类别集合
      *
-     * @param connection, tableBooktype
+     * @param connection, booktype
      * @return java.sql.ResultSet
      */
-    public static ResultSet list(Connection connection, TableBooktype tableBooktype) throws SQLException {
+    public static ResultSet list(Connection connection, Booktype booktype) throws SQLException {
         StringBuffer sb = new StringBuffer("select * from table_booktype");
-        if (!StringUtil.isEmpty(tableBooktype.getBooktypename())) {
-            sb.append(" and bookTypeName like '%" + tableBooktype.getBooktypename() + "%'");
+        if (!StringUtil.isEmpty(booktype.getBooktypename())) {
+            sb.append(" and bookTypeName like '%" + booktype.getBooktypename() + "%'");
         }
         PreparedStatement psmt = connection.prepareStatement(sb.toString().replaceFirst("and", "where"));
         return psmt.executeQuery();
@@ -60,7 +60,7 @@ public class BookTypeDao {
      * @param booktype 图书类别实体
      * @return int
      */
-    public static int update(Connection connection, TableBooktype booktype) throws SQLException {
+    public static int update(Connection connection, Booktype booktype) throws SQLException {
         String sql = "update table_booktype set bookTypeName=? ,bookTypeDesc=? where id=?";
         PreparedStatement psmt = connection.prepareStatement(sql);
         psmt.setString(1, booktype.getBooktypename());

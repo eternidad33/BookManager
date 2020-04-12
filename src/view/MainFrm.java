@@ -7,7 +7,7 @@ package view;
 import dao.BookDao;
 import dao.BookTypeDao;
 import entity.Book;
-import entity.TableBooktype;
+import entity.Booktype;
 import util.DbUtil;
 
 import javax.swing.*;
@@ -51,18 +51,18 @@ public class MainFrm extends JFrame {
      */
     private void fillerItem(String type) {
         Connection conn = null;
-        TableBooktype booktype = null;
+        Booktype booktype = null;
         try {
             conn = dbUtil.getConnection();
-            ResultSet rs = BookTypeDao.list(conn, new TableBooktype());
+            ResultSet rs = BookTypeDao.list(conn, new Booktype());
             if ("search".equals(type)) {
-                booktype = new TableBooktype();
+                booktype = new Booktype();
                 booktype.setBooktypename("请选择...");
                 booktype.setId(-1);
                 this.booktypeCB.addItem(booktype);
             }
             while (rs.next()) {
-                booktype = new TableBooktype();
+                booktype = new Booktype();
                 booktype.setBooktypename(rs.getString("bookTypeName"));
                 booktype.setId(rs.getInt("id"));
                 if ("search".equals(type)) {
@@ -132,8 +132,8 @@ public class MainFrm extends JFrame {
     private void button1ActionPerformed(ActionEvent e) {
         String name = this.bookNameTXT.getText();
         String author = this.authorTXT.getText();
-        TableBooktype tableBooktype = (TableBooktype) this.booktypeCB.getSelectedItem();
-        this.fillTable(new Book(name, author, tableBooktype.getId()));
+        Booktype booktype = (Booktype) this.booktypeCB.getSelectedItem();
+        this.fillTable(new Book(name, author, booktype.getId()));
     }
 
     DbUtil dbUtil = new DbUtil();
