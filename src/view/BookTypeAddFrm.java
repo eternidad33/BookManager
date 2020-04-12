@@ -29,22 +29,22 @@ public class BookTypeAddFrm extends JFrame {
     }
 
     /**
-    * 清空输入框功能
-    *
-    * @return void
-    * @since 2020/4/12
-    */
+     * 清空输入框功能
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void resetValue() {
         this.bookTypeNameTxt.setText("");
         this.bookTypeDescTxt.setText("");
     }
 
     /**
-    * 图书类别添加事件处理
-    *
-    * @return void
-    * @since 2020/4/12
-    */
+     * 图书类别添加事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void button1ActionPerformed(ActionEvent e) {
         String bookTypeName = this.bookTypeNameTxt.getText();
         String bookTypeDesc = this.bookTypeDescTxt.getText();
@@ -75,10 +75,6 @@ public class BookTypeAddFrm extends JFrame {
         }
     }
 
-    private void thisWindowClosing(WindowEvent e) {
-        dispose();
-        new MainFrm().setVisible(true);
-    }
 
     DbUtil dbUtil = new DbUtil();
 
@@ -137,7 +133,7 @@ public class BookTypeAddFrm extends JFrame {
         {
             // compute preferred size
             Dimension preferredSize = new Dimension();
-            for(int i = 0; i < contentPane.getComponentCount(); i++) {
+            for (int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
@@ -151,6 +147,10 @@ public class BookTypeAddFrm extends JFrame {
         setSize(350, 385);
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void thisWindowClosing(WindowEvent e) {
+
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
