@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="BookManager:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BookManager_jar</output-path>
+    <root id="root">
+      <element id="archive" name="BookManager.jar">
+        <element id="module-output" name="BookManager" />
+      </element>
+      <element id="library" level="project" name="mysql-connector-java-8.0.16" />
+    </root>
+  </artifact>
+</component>
