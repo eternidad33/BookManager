@@ -124,11 +124,11 @@ public class MainFrm extends JFrame {
     }
 
     /**
-    * 查询事件处理
-    *
-    * @return void
-    * @since 2020/4/12
-    */
+     * 查询事件处理
+     *
+     * @return void
+     * @since 2020/4/12
+     */
     private void button1ActionPerformed(ActionEvent e) {
         String name = this.bookNameTXT.getText();
         String author = this.authorTXT.getText();
@@ -333,7 +333,7 @@ public class MainFrm extends JFrame {
                 all.add(resultSet.getString("bookName"));
                 all.add(resultSet.getString("author"));
                 all.add(resultSet.getString("sex"));
-                all.add(resultSet.getInt("bookTypeId"));
+                all.add(resultSet.getString("bookTypeName"));
                 all.add(resultSet.getString("bookDesc"));
                 all.add(resultSet.getFloat("price"));
                 dtm.addRow(all);

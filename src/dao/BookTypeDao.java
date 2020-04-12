@@ -17,6 +17,12 @@ import java.sql.SQLException;
  * @author Vigilr
  */
 public class BookTypeDao {
+    /**
+    * 添加图书类别
+    *
+    * @return int
+    * @since 2020/4/12
+    */
     public static int add(Connection connection, Booktype booktype) throws SQLException {
         String sql = "insert into table_booktype values(null,?,?)";
         PreparedStatement psmt = connection.prepareStatement(sql);
@@ -28,7 +34,8 @@ public class BookTypeDao {
     /**
      * 查询图书类别集合
      *
-     * @param connection, booktype
+     * @param connection 数据库连接
+     * @param booktype 图书类别实体
      * @return java.sql.ResultSet
      */
     public static ResultSet list(Connection connection, Booktype booktype) throws SQLException {
@@ -43,7 +50,8 @@ public class BookTypeDao {
     /**
      * 删除图书类别
      *
-     * @param connection, id
+     * @param connection 数据库连接
+     * @param id 图书类别Id
      * @return int
      */
     public static int delete(Connection connection, String id) throws SQLException {
