@@ -24,8 +24,8 @@ import java.util.Vector;
 /**
  * @author vigilr
  */
-public class BookTypeQueryFrm extends JFrame {
-    public BookTypeQueryFrm() {
+public class BookTypeManagerFrm extends JFrame {
+    public BookTypeManagerFrm() {
         initComponents();
     }
 
@@ -197,11 +197,11 @@ public class BookTypeQueryFrm extends JFrame {
 
             //---- table1 ----
             table1.setModel(new DefaultTableModel(
-                    new Object[][]{
-                    },
-                    new String[]{
-                            "\u7f16\u53f7", "\u7c7b\u578b\u540d\u79f0", "\u63cf\u8ff0"
-                    }
+                new Object[][] {
+                },
+                new String[] {
+                    "\u7f16\u53f7", "\u7c7b\u578b\u540d\u79f0", "\u63cf\u8ff0"
+                }
             ));
             table1.addMouseListener(new MouseAdapter() {
                 @Override
@@ -276,15 +276,18 @@ public class BookTypeQueryFrm extends JFrame {
             //---- button4 ----
             button4.setText("\u6dfb\u52a0");
             button4.addActionListener(e -> {
-                button4ActionPerformed(e);
-            });
+			button4ActionPerformed(e);
+			button4ActionPerformed(e);
+			button4ActionPerformed(e);
+			button4ActionPerformed(e);
+		});
             panel1.add(button4);
             button4.setBounds(new Rectangle(new Point(40, 205), button4.getPreferredSize()));
 
             {
                 // compute preferred size
                 Dimension preferredSize = new Dimension();
-                for (int i = 0; i < panel1.getComponentCount(); i++) {
+                for(int i = 0; i < panel1.getComponentCount(); i++) {
                     Rectangle bounds = panel1.getComponent(i).getBounds();
                     preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                     preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
@@ -302,7 +305,7 @@ public class BookTypeQueryFrm extends JFrame {
         {
             // compute preferred size
             Dimension preferredSize = new Dimension();
-            for (int i = 0; i < contentPane.getComponentCount(); i++) {
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);

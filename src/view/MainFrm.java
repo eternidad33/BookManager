@@ -107,8 +107,8 @@ public class MainFrm extends JFrame {
      */
     private void menuItem5ActionPerformed(ActionEvent e) {
 //        dispose();
-        BookTypeQueryFrm bookTypeQueryFrm = new BookTypeQueryFrm();
-        bookTypeQueryFrm.setVisible(true);
+        BookTypeManagerFrm bookTypeManagerFrm = new BookTypeManagerFrm();
+        bookTypeManagerFrm.setVisible(true);
     }
 
     /**
