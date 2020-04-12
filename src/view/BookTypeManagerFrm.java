@@ -262,6 +262,9 @@ public class BookTypeManagerFrm extends JFrame {
 
             //======== scrollPane2 ========
             {
+
+                //---- descTxt ----
+                descTxt.setLineWrap(true);
                 scrollPane2.setViewportView(descTxt);
             }
             panel1.add(scrollPane2);

@@ -517,6 +517,9 @@ public class MainFrm extends JFrame {
 
             //======== scrollPane2 ========
             {
+
+                //---- bookDescTXT ----
+                bookDescTXT.setLineWrap(true);
                 scrollPane2.setViewportView(bookDescTXT);
             }
             panel2.add(scrollPane2);

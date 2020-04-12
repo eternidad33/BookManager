@@ -224,6 +224,7 @@ new FormModel {
 					name: "scrollPane2"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
 						name: "bookDescTXT"
+						"lineWrap": true
 					} )
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 					"x": 105

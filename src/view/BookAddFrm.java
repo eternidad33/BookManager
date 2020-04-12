@@ -153,7 +153,6 @@ public class BookAddFrm extends JFrame {
         button1 = new JButton();
         button2 = new JButton();
         booktypecb = new JComboBox();
-        man.setSelected(true);
 
         //======== this ========
         setTitle("\u56fe\u4e66\u6dfb\u52a0");
@@ -203,6 +202,9 @@ public class BookAddFrm extends JFrame {
 
         //======== scrollPane1 ========
         {
+
+            //---- bookDescTXT ----
+            bookDescTXT.setLineWrap(true);
             scrollPane1.setViewportView(bookDescTXT);
         }
         contentPane.add(scrollPane1);
@@ -215,7 +217,11 @@ public class BookAddFrm extends JFrame {
 
         //---- button1 ----
         button1.setText("\u6dfb\u52a0");
-        button1.addActionListener(this::button1ActionPerformed);
+        button1.addActionListener(e -> {
+			button1ActionPerformed(e);
+			button1ActionPerformed(e);
+			button1ActionPerformed(e);
+		});
         contentPane.add(button1);
         button1.setBounds(new Rectangle(new Point(80, 360), button1.getPreferredSize()));
 
@@ -230,7 +236,7 @@ public class BookAddFrm extends JFrame {
         {
             // compute preferred size
             Dimension preferredSize = new Dimension();
-            for (int i = 0; i < contentPane.getComponentCount(); i++) {
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
