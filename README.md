@@ -4,7 +4,7 @@
 
 推荐视频：[JAVA+MySql 图书管理系统，技术:Swing+jdbc+mysql](https://www.bilibili.com/video/BV1it41157ph?p=1)
 
-详细设计步骤，可参考[我的博客]()
+详细设计步骤，可参考[我的博客](https://blog.csdn.net/qq_42907802/article/details/105493380)
 
 ## 仓库介绍
 
