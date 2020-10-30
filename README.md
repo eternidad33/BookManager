@@ -40,31 +40,31 @@ Idea插件:`JFormDesigner`和`EasyCode`
 
    连接数据库失败直接弹出窗口，退出程序
 
-   ![数据库连接](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager数据库连接.gif)
+   [![预览数据库连接](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager数据库连接.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager数据库连接.gif)
 
 2. 登录界面
 
-   ![BookManager登录](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager登录.gif)
+   [![预览BookManager登录](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager登录.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager登录.gif)
 
 3. 图书管理主界面
 
-   ![主界面](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager主界面.gif)
+   [![预览主界面](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager主界面.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager主界面.gif)
 
 4. 添加图书界面
 
-   ![图书添加](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书添加.gif)
+   [![预览图书添加](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书添加.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书添加.gif)
 
 5. 图书类别管理界面
 
-   ![图书类别](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书类别.gif)
+   [![预览图书类别](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书类别.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager图书类别.gif)
 
 6. 添加图书类别界面
 
-   ![类别添加](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager类别添加.gif)
+   [![预览类别添加](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager类别添加.gif)](https://gitee.com/eternidad33/picbed/raw/master/img/BookManager类别添加.gif)
 
 ## 代码行数统计
 
-![代码行数统计](https://cdn.jsdelivr.net/gh/eternidad33/picbed@master/img/BookManager代码行数统计.png)
+[![预览代码行数统计](https://cdn.jsdelivr.net/gh/eternidad33/picbed@master/img/BookManager代码行数统计.png)](https://cdn.jsdelivr.net/gh/eternidad33/picbed@master/img/BookManager代码行数统计.png)
 
 虽然表面看上去是2000多行Java代码，实际上80%以上都是idea插件自己生成的。
 
